@@ -33,10 +33,10 @@ int main(int argc, char **argv) {
     if (CKR_OK != rv)
         return EXIT_FAILURE;
 
-    printf("Sign/verify with RSA\n");
-    rv = rsa_sign_verify(session);
-    if (CKR_OK != rv)
-        return EXIT_FAILURE;
+//    printf("Sign/verify with RSA\n");
+//    rv = rsa_sign_verify(session);
+//    if (CKR_OK != rv)
+//        return EXIT_FAILURE;
 
     printf("Sign/verify with EC\n");
     rv = ec_sign_verify(session);
