@@ -81,7 +81,7 @@ CK_RV ec_sign_verify(CK_SESSION_HANDLE session) {
         printf("prime256v1 key generated. Public key handle: %lu, Private key handle: %lu\n",
             pubkey, privkey);
         pubkey = 6;
-        pubkey = 7;
+        privkey = 7;
     } else {
         printf("prime256v1 key generation failed: %lu\n", rv);
         return rv;
