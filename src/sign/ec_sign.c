@@ -76,16 +76,19 @@ CK_RV ec_sign_verify(CK_SESSION_HANDLE session) {
     CK_OBJECT_HANDLE pubkey = CK_INVALID_HANDLE;
     CK_OBJECT_HANDLE privkey = CK_INVALID_HANDLE;
 
-    printf("pubkey handle: %lu \n", pubkey);
-    printf("privkey handle: %lu \n", privkey);
     rv = generate_ec_keypair(session, prime256v1, sizeof(prime256v1), &pubkey, &privkey);
     if (CKR_OK == rv) {
         printf("prime256v1 key generated. Public key handle: %lu, Private key handle: %lu\n",
             pubkey, privkey);
+        pubkey = 6;
+        pubkey = 7;
     } else {
         printf("prime256v1 key generation failed: %lu\n", rv);
         return rv;
     }
+
+    printf("pubkey handle: %lu \n", pubkey);
+    printf("privkey handle: %lu \n", privkey);
 
     rv = generate_signature(session, privkey, mechanism,
                            data, data_length, signature, &signature_length);
